@@ -1,18 +1,25 @@
-import Card from "@/components/Card";
+import {getData} from "@/actions/db";
 import Experiment from "@/components/Experiment";
+import {Record} from "pocketbase";
 import dynamic from "next/dynamic";
 
-const images = [
-    '/bat_loong.png',
-    '/Joycon_red.5.png',
-    '/office_chair_final_1_1.png',
-    '/Owl.png',
-    '/spooky.png',
-    '/sword - FINAL.png',
-]
+
+const Card = dynamic(() => import("@/components/Card"), {ssr: false});
 
 
-export default function Home() {
+
+
+export default async function Home() {
+    const projects = await getData('projects');
+
+
+
+
+    const renderProjectCard = ({id, title, image, description}: Record) => {
+        return <Card key={id} title={title} description={description} image={image}/>
+    }
+
+
   return (
       <div className={'bg-gray-800 h-auto w-full drop-shadow-2xl border-x-8 border-b-8 border-slate-600 items-center'}>
           <h1 className={'text-center text-3xl my-3'}>
@@ -30,11 +37,14 @@ export default function Home() {
               My 3D Models
           </h1>
 
-          <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 place-items-center gap-3 mx-8 '}>
+          <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 place-items-center gap-6 mx-8 '}>
               {/*TODO Fix this, this is horrendous*/}
-              {images.map((image) =>
-                  <Card key={image} img={image}/>
-              )}
+
+
+              {projects &&
+                  projects.map(renderProjectCard)
+              }
+
           </div>
 
 

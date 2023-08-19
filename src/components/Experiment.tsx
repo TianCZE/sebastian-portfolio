@@ -1,18 +1,13 @@
+
+import {getData} from "@/actions/db";
 import Image from "next/image";
-import background from "../../public/background.png"
-import {TERipple} from "tw-elements-react";
 
-function Experiment() {
+
+async function Experiment() {
+
+
     return(
-        <>
-            <TERipple>
-                <button>
-                    Sup
-                </button>
-            </TERipple>
-        </>
-
-
+        <></>
     )
 }
 

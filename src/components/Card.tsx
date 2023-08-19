@@ -1,9 +1,10 @@
 "use client";
-import {TERipple} from "tw-elements-react";
+import { TERipple } from 'tw-elements-react';
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Card({img = '/Owl.png'}) {
+
+export default function Card({title = 'err', description = 'err desc', image = '/Owl.png'}) {
     return (
         <div
             className="relative self-center object-center rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] max-w-[500px] dark:bg-neutral-700">
@@ -11,8 +12,8 @@ export default function Card({img = '/Owl.png'}) {
                 <TERipple>
                     <Image
                         className={'aspect-square'}
-                        src={img}
-                        alt=""
+                        src={image}
+                        alt={description}
                         width={500}
                         height={500}
                         style={{objectFit: 'cover'}}
@@ -23,14 +24,13 @@ export default function Card({img = '/Owl.png'}) {
                     </Link>
                 </TERipple>
             </div>
-            <div className="p-6">
+            <div className="p-6 h-[230px]">
                 <h5
                     className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                    Card title
+                    {title}
                 </h5>
                 <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card`s content.
+                    {description}
                 </p>
             </div>
         </div>
