@@ -1,7 +1,7 @@
 import PocketBase, {Record} from 'pocketbase';
 
 
-const db = new PocketBase('http://127.0.0.1:8090/')
+const db = new PocketBase('https://thoughtless-shoe.pockethost.io')
 
 export const revalidate = 10;
 
