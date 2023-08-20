@@ -1,5 +1,5 @@
 
-import {getData} from "@/actions/db";
+import {getAllRecords} from "@/actions/db";
 import Image from "next/image";
 
 

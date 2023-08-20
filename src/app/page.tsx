@@ -1,27 +1,18 @@
-import {getData} from "@/actions/db";
-import Experiment from "@/components/Experiment";
-import {Record} from "pocketbase";
+import CardShowcase from "@/components/CardShowcase";
+import {getAllRecords} from "@/actions/db";
+import TabsBasicExample from "@/components/TabsBasuc";
 import dynamic from "next/dynamic";
 
-
-const Card = dynamic(() => import("@/components/Card"), {ssr: false});
-
-
-
-
-export default async function Home() {
-    const projects = await getData('projects');
+const Header = dynamic(() => import("@/components/Header"), {
+    ssr: false,
+});
 
 
+export default function Home() {
 
-
-    const renderProjectCard = ({id, title, image, description}: Record) => {
-        return <Card key={id} title={title} description={description} image={image}/>
-    }
-
-
-  return (
-      <div className={'bg-gray-800 h-auto w-full drop-shadow-2xl border-x-8 border-b-8 border-slate-600 items-center'}>
+    return (
+         <>
+             <Header/>
           <h1 className={'text-center text-3xl my-3'}>
               Sebastián Novák
           </h1>
@@ -37,20 +28,11 @@ export default async function Home() {
               My 3D Models
           </h1>
 
-          <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 place-items-center gap-6 mx-8 '}>
-              {/*TODO Fix this, this is horrendous*/}
+         <TabsBasicExample/>
 
-
-              {projects &&
-                  projects.map(renderProjectCard)
-              }
-
-          </div>
-
-
-
-      </div>
+         <div className={"mb-8"}>
+             <CardShowcase data={getAllRecords('projects')}/>
+         </div>
+         </>
   )
 }
-
-// flex flex-col items-center justify-between
