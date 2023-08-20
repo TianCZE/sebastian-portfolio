@@ -6,7 +6,6 @@ const Card = dynamic(() => import("@/components/Card"), {ssr: false});
 
 export default async function CardShowcase({data} : any) {
     const projects = await data;
-    console.log(projects)
 
     const renderProjectCard = ({id, title, image, description}: Record) => {
         return <Card key={id} id={id} title={title} description={description} image={image}/>
