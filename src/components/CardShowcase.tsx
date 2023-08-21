@@ -1,5 +1,4 @@
 import {Record} from "pocketbase";
-import {getAllRecords} from "@/actions/db";
 import dynamic from "next/dynamic";
 const Card = dynamic(() => import("@/components/Card"), {ssr: false});
 
@@ -8,7 +7,9 @@ export default async function CardShowcase({data} : any) {
     const projects = await data;
 
     const renderProjectCard = ({id, title, image, description}: Record) => {
-        return <Card key={id} id={id} title={title} description={description} image={image}/>
+        if (image) {
+            return <Card key={id} id={id} title={title} description={description} image={image}/>
+        }
     }
 
     return (

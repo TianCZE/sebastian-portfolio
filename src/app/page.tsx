@@ -5,10 +5,7 @@ import {getAllRecords} from "@/actions/db";
 export default function Home() {
 
     return (
-         <>
-          <h1 className={'text-center text-3xl my-3'}>
-              Sebastián Novák
-          </h1>
+     <>
           <h2 className={'text-center mb-2.5'}>
               Portfolio
           </h2>
@@ -24,6 +21,6 @@ export default function Home() {
          <div className={"mb-8"}>
              <CardShowcase data={getAllRecords('projects')}/>
          </div>
-         </>
+     </>
   )
 }
