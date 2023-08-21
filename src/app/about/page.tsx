@@ -1,5 +1,8 @@
-import AccordionAlwaysOpen from "@/components/AccordionAlwaysOpen";
+import dynamic from "next/dynamic";
 
+const AccordionAlwaysOpen = dynamic(() => import("../../components/AccordionAlwaysOpen"), {
+    ssr: false,
+});
 
 
 export default function About() {

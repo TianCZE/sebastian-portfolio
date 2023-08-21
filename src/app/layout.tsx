@@ -5,10 +5,8 @@ import React from "react";
 import Image from "next/image";
 import background from "/public/background.png";
 import "tw-elements-react/dist/css/tw-elements-react.min.css";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import IconsFooter from "@/components/IconsFooter";
 import "tw-elements/dist/css/tw-elements.min.css";
-import SideNav from "@/components/SideNav";
 import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("../components/Header"), {
