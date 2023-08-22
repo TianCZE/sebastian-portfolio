@@ -27,7 +27,7 @@ export default function Header() {
                         data-te-dropdown-toggle-ref
                         aria-expanded="false">
                         <div
-                            className="bg-white rounded-full"/>
+                            className="bg-white rounded-full h-10 w-10"/>
                         <span className="w-2 pl-1">
                           <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export default function Header() {
                     </ul>
                 </div>
                 {/*TODO Horrendous please fix!*/}
-                <h1 className={' text-black text-2xl text-center top-1 right-0 pr-72'} >Sebastián Novák</h1>
+                <h1 className={' text-black text-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'} >Sebastián Novák</h1>
             </div>
         </nav>
     )
