@@ -1,7 +1,10 @@
 'use client'
-
 import React, { useState } from "react";
-import { TECollapse } from "tw-elements-react";
+import dynamic from "next/dynamic";
+
+const TECollapse = dynamic(() =>
+    import("tw-elements-react").then((res) => res.TECollapse)
+);
 
 
 export default function AccordionAlwaysOpen(): JSX.Element {

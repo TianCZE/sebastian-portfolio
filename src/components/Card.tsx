@@ -1,7 +1,12 @@
 "use client";
-import { TERipple } from 'tw-elements-react';
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+
+
+const TERipple = dynamic(() =>
+    import("tw-elements-react").then((res) => res.TERipple)
+);
 
 
 export default function Card({id = "", title = 'err', description = 'err desc', image = '/Owl.png'}) {
