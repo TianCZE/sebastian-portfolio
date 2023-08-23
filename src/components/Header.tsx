@@ -15,7 +15,7 @@ export default function Header() {
 
     return (
         <nav
-            className="relative bg-orange-400 flex w-full flex-wrap items-center justify-between py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4"
+            className="fixed z-20 bg-orange-400 flex w-full flex-wrap items-center justify-between py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4"
             data-te-navbar-ref>
             <div className="flex w-full flex-wrap items-center justify-between px-3">
                 <div className=" relative ml-3" data-te-dropdown-ref>

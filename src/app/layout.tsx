@@ -8,6 +8,10 @@ import "tw-elements-react/dist/css/tw-elements-react.min.css";
 import IconsFooter from "@/components/IconsFooter";
 import "tw-elements/dist/css/tw-elements.min.css";
 import dynamic from "next/dynamic";
+import Navbar from "@/components/SideNav";
+import {inspect} from "util";
+import styles from "./utils.module.css"
+import Link from "next/link";
 
 const Header = dynamic(() => import("../components/Header"), {
     ssr: false,
@@ -27,26 +31,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={'bg-white'}>
       <body className={roboto.className}>
-      {/*Background*/}
       <Header/>
-          <div className={'flex flex-col items-center justify-between'}>
-              <div className={'relative w-full'}>
-                  <div className={'fixed object-cover blur-sm -z-10'}>
-                      <Image
-                          src={background}
-                          alt={'Picture of background'}
-                          priority={true}
-                          placeholder={'blur'}
-                      />
-                  </div>
-              </div>
-              <div className={'bg-gray-800 h-auto w-full drop-shadow-2xl items-center'}>
-                  {children}
-                  <IconsFooter/>
-              </div>
-          </div>
+      {/*Div just to move navbar a little down*/}
+      <div className={'h-[54px] bg-white'}/>
+      <Navbar/>
+      <div className={'h-[54px] bg-white'}/>
+
+      <div className={`${styles.content}`}>
+          {children}
+      </div>
       </body>
     </html>
   )
