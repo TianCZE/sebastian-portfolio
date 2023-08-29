@@ -41,7 +41,7 @@ export default function RootLayout({
           {/*<div className={`${styles.content}`}>*/}
           {/*    {children}*/}
           {/*</div>*/}
-          <IconsFooter/>
+          {/*<IconsFooter/>*/}
       </body>
     </html>
   )
