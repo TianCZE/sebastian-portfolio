@@ -9,9 +9,7 @@ import IconsFooter from "@/components/IconsFooter";
 import "tw-elements/dist/css/tw-elements.min.css";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/SideNav";
-import {inspect} from "util";
 import styles from "./utils.module.css"
-import Link from "next/link";
 
 const Header = dynamic(() => import("../components/Header"), {
     ssr: false,
@@ -33,15 +31,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={'bg-white'}>
       <body className={roboto.className}>
-      <Header/>
-      {/*Div just to move navbar a little down*/}
-      <div className={'h-[54px] bg-white'}/>
-      <Navbar/>
-      <div className={'h-[54px] bg-white'}/>
+      {children}
+          {/*<Header/>*/}
+          {/*/!*Div just to move navbar a little down*!/*/}
+          {/*<div className={'h-[54px] bg-white'}/>*/}
+          {/*<Navbar/>*/}
+          {/*<div className={'h-[54px] bg-white'}/>*/}
 
-      <div className={`${styles.content}`}>
-          {children}
-      </div>
+          {/*<div className={`${styles.content}`}>*/}
+          {/*    {children}*/}
+          {/*</div>*/}
+          <IconsFooter/>
       </body>
     </html>
   )

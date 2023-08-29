@@ -19,6 +19,7 @@ function Navbar() {
                 return <Link
                     key={i}
                     href={l.path}
+                    // TODO: ADD HIGHLIGHT FOR SELECTED PAGE
                     style={{textDecoration: (activeSegment === l.targetSegment) ? 'back' : 'none'}}>
                     {l.label}
                 </Link>
