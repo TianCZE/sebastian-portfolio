@@ -31,17 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={'bg-white'}>
       <body className={roboto.className}>
-      {children}
-          {/*<Header/>*/}
-          {/*/!*Div just to move navbar a little down*!/*/}
-          {/*<div className={'h-[54px] bg-white'}/>*/}
-          {/*<Navbar/>*/}
-          {/*<div className={'h-[54px] bg-white'}/>*/}
-
-          {/*<div className={`${styles.content}`}>*/}
-          {/*    {children}*/}
-          {/*</div>*/}
-          {/*<IconsFooter/>*/}
+      <div
+          className="overflow-hidden bg-[url(https://file.rendit.io/n/ZXnHgIlgOCOmtYoSdwXL.png)] bg-50%_50% bg-blend-normal bg-no-repeat flex flex-col gap-y-6 w-fit sm:px-0 lg:px-12 py-16"
+          id="DesktopRoot"
+      >
+        {children}
+      </div>
       </body>
     </html>
   )
@@ -49,3 +44,15 @@ export default function RootLayout({
 
 // Border into div
 //border-x-8 border-b-8 border-slate-600
+
+
+// {/*<Header/>*/}
+// {/*/!*Div just to move navbar a little down*!/*/}
+// {/*<div className={'h-[54px] bg-white'}/>*/}
+// {/*<Navbar/>*/}
+// {/*<div className={'h-[54px] bg-white'}/>*/}
+//
+// {/*<div className={`${styles.content}`}>*/}
+// {/*    {children}*/}
+// {/*</div>*/}
+// {/*<IconsFooter/>*/}

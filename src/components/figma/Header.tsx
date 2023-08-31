@@ -1,12 +1,12 @@
 'use client'
 
 
-import {useState} from "react";
+import {PropsWithChildren, useState} from "react";
 
 
 
 
-export default function Header() {
+export default function Header({children}: PropsWithChildren) {
 
     enum buttons {
         work_3d,
@@ -17,11 +17,16 @@ export default function Header() {
 
     const [clickedButton, setClickedButton] = useState(buttons.work_3d);
 
+
+    // Colors
+    // [#774360]
+    // [#B76894]
+
     const renderButton = () => {
         return (
             <>
                 <button
-                    className={`bg-${clickedButton == buttons.work_3d ? '[#774360]' : '[#B76894]'} border border-opacity-30 border-[#e7ab79] flex flex-col justify-center w-[141px] h-16 shrink-0 items-center`}
+                    className={`bg-${clickedButton == buttons.work_3d ? '[#89215B]' : '[#774360]'} border border-opacity-30 border-[#e7ab79] flex flex-col justify-center w-[141px] h-16 shrink-0 items-center`}
                     id="Button1"
                     onClick={() => setClickedButton(buttons.work_3d)}
                 >
@@ -31,7 +36,7 @@ export default function Header() {
                 </button>
 
                 <button
-                    className={`bg-${clickedButton == buttons.coding ? '[#B76894]' : '[#774360]'} border border-opacity-30 border-[#e7ab79] flex flex-col justify-center w-[141px] h-16 shrink-0 items-center`}
+                    className={`bg-${clickedButton == buttons.coding ? '[#89215B]' : '[#774360]'} border border-opacity-30 border-[#e7ab79] flex flex-col justify-center w-[141px] h-16 shrink-0 items-center`}
                     id="Button3"
                     onClick={() => setClickedButton(buttons.coding)}
                 >
@@ -41,7 +46,7 @@ export default function Header() {
                 </button>
 
                 <button
-                    className={`bg-${clickedButton == buttons.gamedev ? '[#B76894]' : '[#774360]'} border border-opacity-30 border-[#e7ab79] flex flex-col justify-center w-[141px] h-16 shrink-0 items-center`}
+                    className={`bg-${clickedButton == buttons.gamedev ? '[#89215B]' : '[#774360]'} border border-opacity-30 border-[#e7ab79] flex flex-col justify-center w-[141px] h-16 shrink-0 items-center`}
                     id="Button5"
                     onClick={() => setClickedButton(buttons.gamedev)}
                 >
@@ -57,11 +62,11 @@ export default function Header() {
 
     return (
         <div
-            className="border-solid border-[#e7ab79] h-[38px] overflow-hidden bg-[#774360] relative flex flex-row w-fit place-self-center items-center border rounded-lg"
+            className="border-solid border-[#e7ab79] h-[38px] overflow-hidden bg-[#89215B] relative flex flex-row w-fit place-self-center items-center border rounded-lg"
             id="NavbarRoot"
         >
-
             {renderButton()}
+            {children}
 
         </div>
     )

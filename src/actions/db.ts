@@ -12,7 +12,26 @@ const parseImage = (record: Record) => {
 }
 
 
-export const getAllRecords = async (collectionName: string) => {
+
+export const getAllRecordsFromAllCollections = async () => {
+    await db.admins.authWithPassword('novak.basty@gmail.com', `${process.env.ADMIN_KEY}`);
+    try {
+        const collections = await db.collections.getFullList();
+        collections.flat();
+        collections.shift();
+
+        return await Promise.all(
+            collections.map((collection) => getAllRecordsFromCollection(collection.name))
+        );
+
+    } catch (e: any) {
+        console.error(e.message);
+        return null;
+    }
+}
+
+
+export const getAllRecordsFromCollection = async (collectionName: string) => {
     try {
         const records = await db.collection(collectionName).getFullList();
         return records.map(parseImage);
@@ -21,6 +40,7 @@ export const getAllRecords = async (collectionName: string) => {
         return null;
     }
 }
+
 
 export const getRecord = async (collectionName: string, id: string) => {
     try {

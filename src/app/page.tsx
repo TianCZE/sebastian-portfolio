@@ -1,18 +1,12 @@
+
 import CardShowcase from "@/components/CardShowcase";
-import {getAllRecords} from "@/actions/db";
+import {getAllRecordsFromAllCollections, getAllRecordsFromCollection} from "@/actions/db";
 import Header from "@/components/figma/Header";
 
 
-export default function Home() {
-
-
-
-
+export default async function Home() {
     return (
-        <div
-            className="overflow-hidden bg-[url(https://file.rendit.io/n/ZXnHgIlgOCOmtYoSdwXL.png)] bg-50%_50% bg-blend-normal bg-no-repeat flex flex-col gap-y-6 w-fit sm:px-0 lg:px-12 py-16"
-            id="DesktopRoot"
-        >
+        <>
             <div className="relative flex flex-col items-start pt-[210px] pb-56">
                 <img
                     src="https://file.rendit.io/n/fOSe8IhnB4LMY7ixbxk3.png"
@@ -31,9 +25,7 @@ export default function Home() {
                 </h3>
             </div>
 
-            <Header/>
-            <CardShowcase data={getAllRecords('3D_art')}/>
-
+            <CardShowcase data={ await getAllRecordsFromAllCollections()}/>
 
 
             <div
@@ -49,7 +41,7 @@ export default function Home() {
                 >
                     <div className="text-justify text-2xl text-[#bebebe] w-full">
                         My name is Sebastián Novák. I come form Czech Republic where I am
-                        currently attend Masaryk’s University, Faculty of Informatics, study
+                        currently attending Masaryk’s University, Faculty of Informatics, study
                         program: Programming and Application Development. I started in 2023.
                         <br />
                         <br />
@@ -62,8 +54,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-
-        </div>
+        </>
     )
 
   //
