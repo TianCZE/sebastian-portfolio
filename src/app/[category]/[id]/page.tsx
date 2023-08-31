@@ -1,4 +1,4 @@
-import {getRecord} from "@/actions/db";
+import {getRecord} from "@/actions/database";
 
 import PhotoGallery from "@/components/PhotoGallery";
 

@@ -1,7 +1,7 @@
 
-import CardShowcase from "@/components/CardShowcase";
-import {getAllRecordsFromAllCollections, getAllRecordsFromCollection} from "@/actions/db";
-import Header from "@/components/figma/Header";
+import {getAllRecordsFromAllCollections} from "@/actions/database";
+import PhotoGallery from "@/components/PhotoGallery";
+import Image from "next/image";
 
 
 export default async function Home() {
@@ -16,7 +16,7 @@ export default async function Home() {
                 <h1 className="text-6xl font-bold text-white absolute top-20 left-5 h-16 w-[491px]">
                     SEBASTIAN NOVAK
                 </h1>
-                <h3 className="text-4xl font-bold text-[#e7ab79] left-5 relative">
+                <h3 className="text-4xl font-bold text-myOrangeMuted left-5 relative">
                     FULLSTACK PROGRAMMER
                     <br />
                     GAME DEVELOPER
@@ -25,14 +25,13 @@ export default async function Home() {
                 </h3>
             </div>
 
-            <CardShowcase data={ await getAllRecordsFromAllCollections()}/>
-
+            <PhotoGallery data={ await getAllRecordsFromAllCollections()}/>
 
             <div
                 className="overflow-hidden flex flex-col gap-6 w-full h-fit items-center py-16"
                 id="AboutMeRoot"
             >
-                <div className="text-center text-4xl font-bold text-[#e7ab79]">
+                <div className="text-center text-4xl font-bold text-myOrangeMuted">
                     About Me
                 </div>
                 <div
@@ -57,24 +56,4 @@ export default async function Home() {
         </>
     )
 
-  //
-  //   return (
-  //    <div>
-  //         <h2 className={'text-center text-black mb-2.5'}>
-  //             Portfolio
-  //         </h2>
-  //         <p className={'block mx-10 mb-2.5 text-center text-black'}>
-  //             This is my portfolio I am a student at MUNI FI.
-  //             I am interested in programming, game design and 3D modeling
-  //         </p>
-  //
-  //         <h1 className={'text-center text-black text-3xl my-3'}>
-  //             My 3D Models
-  //         </h1>
-  //
-  //        <div className={"mb-8"}>
-  //            <CardShowcase data={getAllRecords('projects')}/>
-  //        </div>
-  //    </div>
-  // )
 }

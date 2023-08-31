@@ -11,12 +11,6 @@ const nextConfig = {
                 port: '',
                 pathname: '/api/**',
             },
-            {
-                protocol: 'https',
-                hostname: 'tecdn.b-cdn.net',
-                port: '',
-                pathname: '/img/**',
-            }
         ],
     },}
 
