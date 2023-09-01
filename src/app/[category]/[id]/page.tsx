@@ -37,6 +37,7 @@ export default async function Detail({params}: {
                         className="block text-justify text-white w-5/6"
                         id="Decription"
                     >
+                        {/*// @ts-ignore*/}
                         {data!.description}
                     </div>
                 </div>

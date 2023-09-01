@@ -6,19 +6,19 @@ import Image from "next/image";
 export default async function Home() {
     return (
         <>
-            <div className="relative flex flex-col items-start pt-[210px] pb-[500px]">
+            <div className="relative flex flex-col items-start pt-[210px] pb-[500px] lg:pb-[1000px]">
                 <Image
                     src="https://file.rendit.io/n/fOSe8IhnB4LMY7ixbxk3.png"
-                    className="w-[916px] h-[576px] object-cover mix-blend-lighten absolute top-0 left-[171px]"
+                    className="w-[916px] h-[576px] lg:w-[1800px] object-cover mix-blend-lighten absolute top-0 md:top-[500px] left-[171px]"
                     id="Image1"
                     width={500}
                     height={800}
                     alt="Portfolio Avatar"
                 />
-                <h1 className="text-6xl font-bold text-white absolute top-20 left-5 h-16 w-[491px]">
+                <h1 className="text-6xl lg:text-8xl font-bold text-white absolute top-30 left-20 h-16 w-[491px]">
                     SEBASTIAN NOVAK
                 </h1>
-                <h3 className="text-4xl font-bold text-myOrangeMuted left-5 relative">
+                <h3 className="text-4xl lg:text-6xl font-bold text-myOrangeMuted left-20 top-[120px] relative">
                     FULLSTACK PROGRAMMER
                     <br/>
                     GAME DEVELOPER

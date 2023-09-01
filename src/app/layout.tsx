@@ -21,7 +21,7 @@ export default function RootLayout(props: { children: React.ReactNode}) {
     <html lang="en" className={'bg-white'}>
       <body className={roboto.className}>
       <div
-          className="overflow-hidden bg-[url(https://file.rendit.io/n/ZXnHgIlgOCOmtYoSdwXL.png)] bg-50%_50% bg-blend-normal bg-no-repeat flex flex-col gap-y-12 w-fit sm:px-0 lg:px-12"
+          className="overflow-hidden bg-[url(https://file.rendit.io/n/ZXnHgIlgOCOmtYoSdwXL.png)] bg-50%_50% bg-blend-normal bg-no-repeat flex flex-col gap-y-12 w-fit sm:px-0 lg:mx-auto lg:px-12 "
           id="DesktopRoot"
       >
           {props.children}

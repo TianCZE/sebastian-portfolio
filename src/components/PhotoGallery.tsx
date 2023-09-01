@@ -78,7 +78,7 @@ export default function PhotoGallery({data}: any) {
             </div>
 
             <div className="">
-                <div className="grid grid-cols-2 justify-center mx-4">
+                <div className="grid grid-cols-2 lg:grid-cols-3 justify-center mx-4">
                     {displayedContent.map(renderPhoto)}
                 </div>
             </div>
