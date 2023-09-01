@@ -16,19 +16,15 @@ export const metadata: Metadata = {
   description: 'personal portfolio',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout(props: { children: React.ReactNode}) {
   return (
     <html lang="en" className={'bg-white'}>
       <body className={roboto.className}>
       <div
-          className="overflow-hidden bg-[url(https://file.rendit.io/n/ZXnHgIlgOCOmtYoSdwXL.png)] bg-50%_50% bg-blend-normal bg-no-repeat flex flex-col gap-y-6 w-fit sm:px-0 lg:px-12 py-16"
+          className="overflow-hidden bg-[url(https://file.rendit.io/n/ZXnHgIlgOCOmtYoSdwXL.png)] bg-50%_50% bg-blend-normal bg-no-repeat flex flex-col gap-y-12 w-fit sm:px-0 lg:px-12"
           id="DesktopRoot"
       >
-        {children}
+          {props.children}
       </div>
       </body>
     </html>

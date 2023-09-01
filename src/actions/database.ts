@@ -41,7 +41,7 @@ export const getAllRecordsFromCollection = async (collectionName: string) => {
 export const getRecord = async (collectionName: string, id: string) => {
     try {
         const record = await database.collection(collectionName).getOne(id);
-        return [parseImage(record)];
+        return parseImage(record);
     } catch (e: any) {
         console.error(e.message);
         return null;

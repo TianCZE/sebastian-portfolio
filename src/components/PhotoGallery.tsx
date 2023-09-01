@@ -27,7 +27,7 @@ export default function PhotoGallery({data}: any) {
         return (
             <>
                 <button
-                    className={`bg-${clickedButton == buttons.work_3d ? 'myPurpleLight' : 'myPurpleDark'} border border-opacity-30 border-myOrangeMuted flex flex-col justify-center w-[141px] h-16 shrink-0 items-center`}
+                    className={`${clickedButton == buttons.work_3d ? 'bg-myPurpleLight' : 'bg-myPurpleMedium'} border border-opacity-30 border-myOrangeMuted flex flex-col justify-center w-1/3  h-16 shrink-0 items-center`}
                     id="Button1"
                     onClick={() => updateSelection(buttons.work_3d)}
                 >
@@ -37,7 +37,7 @@ export default function PhotoGallery({data}: any) {
                 </button>
 
                 <button
-                    className={`bg-${clickedButton == buttons.coding ? 'myPurpleLight' : 'myPurpleDark'} border border-opacity-30 border-myOrangeMuted flex flex-col justify-center w-[141px] h-16 shrink-0 items-center`}
+                    className={`${clickedButton == buttons.coding ? 'bg-myPurpleLight' : 'bg-myPurpleMedium'} border border-opacity-30 border-myOrangeMuted flex flex-col justify-center w-1/3 h-16 shrink-0 items-center`}
                     id="Button2"
                     onClick={() => updateSelection(buttons.coding)}
                 >
@@ -47,7 +47,7 @@ export default function PhotoGallery({data}: any) {
                 </button>
 
                 <button
-                    className={`bg-${clickedButton == buttons.gamedev ? 'myPurpleLight' : 'myPurpleDark'} border border-opacity-30 border-myOrangeMuted flex flex-col justify-center w-[141px] h-16 shrink-0 items-center`}
+                    className={`${clickedButton == buttons.gamedev ? 'bg-myPurpleLight' : 'bg-myPurpleMedium'} border border-opacity-30 border-myOrangeMuted flex flex-col justify-center w-1/3  h-16 shrink-0 items-center`}
                     id="Button3"
                     onClick={() => updateSelection(buttons.gamedev)}
                 >
@@ -62,7 +62,7 @@ export default function PhotoGallery({data}: any) {
 
     const renderPhoto = ({image, title, description, id, collectionName}: any) => {
         return (
-            <PhotoCard image={image} title={title} description={description} id={id} collectionName={collectionName}/>
+            <PhotoCard key={id} image={image} title={title} description={description} id={id} collectionName={collectionName}/>
         )
     }
 
@@ -70,15 +70,15 @@ export default function PhotoGallery({data}: any) {
     return (
         <>
             <div
-                className="border-solid border-[#e7ab79] h-[38px] overflow-hidden bg-[#89215B] relative flex flex-row w-fit place-self-center items-center border rounded-lg"
+                className="border-solid border-myOrangeMuted h-[38px] overflow-hidden bg-myPurpleMedium relative flex flex-row w-11/12 place-self-center items-center border rounded-lg"
                 id="NavbarRoot"
             >
                 {renderButton()}
 
             </div>
 
-            <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
-                <div className="-m-1 flex flex-wrap md:-m-2">
+            <div className="">
+                <div className="grid grid-cols-2 justify-center mx-4">
                     {displayedContent.map(renderPhoto)}
                 </div>
             </div>
