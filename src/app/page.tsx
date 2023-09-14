@@ -6,25 +6,29 @@ import Image from "next/image";
 export default async function Home() {
     return (
         <>
-            <div className="relative flex flex-col items-start pt-[210px] pb-[500px] lg:pb-[1000px]">
+            <div className="relative flex flex-col md:flex-row items-start md:gap-24 pt-5 md:pt-[210px] pb-[500px] lg:pb-[1000px]">
+
+                <div className={"relative pl-2 md:pl-80"}>
+                    <h1 className="text-6xl md:text-9xl font-bold text-white relative">
+                        SEBASTIAN NOVAK
+                    </h1>
+                    <h3 className="text-4xl md:text-7xl font-bold text-myOrangeMuted relative">
+                        FULLSTACK PROGRAMMER
+                        <br/>
+                        GAME DEVELOPER
+                        <br/>
+                        3D ARTIST
+                    </h3>
+                </div>
+
                 <Image
-                    src="https://file.rendit.io/n/fOSe8IhnB4LMY7ixbxk3.png"
-                    className="w-[916px] h-[576px] lg:w-[1800px] object-cover mix-blend-lighten absolute top-0 md:top-[500px] left-[171px]"
+                    src="https://thoughtless-shoe.pockethost.io/api/files/8h4atte871jrete/mh5xe03kqd06gxc/owl_ZCju0xhtr7.png?token="
+                    className="object-cover mix-blend-lighten md:relative"
                     id="Image1"
-                    width={500}
-                    height={800}
-                    alt="Portfolio Avatar"
+                    width={600}
+                    height={600}
+                    alt="3d sculpt of an owl"
                 />
-                <h1 className="text-6xl lg:text-8xl font-bold text-white absolute top-30 left-20 h-16 w-[491px]">
-                    SEBASTIAN NOVAK
-                </h1>
-                <h3 className="text-4xl lg:text-6xl font-bold text-myOrangeMuted left-20 top-[120px] relative">
-                    FULLSTACK PROGRAMMER
-                    <br/>
-                    GAME DEVELOPER
-                    <br/>
-                    3D ARTIST
-                </h3>
             </div>
 
             <PhotoGallery data={await getAllRecordsFromAllCollections()}/>

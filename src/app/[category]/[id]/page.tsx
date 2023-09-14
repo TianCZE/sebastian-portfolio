@@ -1,7 +1,5 @@
 import {getRecord} from "@/actions/database";
 
-import PhotoGallery from "@/components/PhotoGallery";
-import PhotoCard from "@/components/PhotoCard";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,9 +12,6 @@ export default async function Detail({params}: {
 }) {
 
     const data = await getRecord(params.category, params.id);
-
-
-    console.log(data);
 
     return (
         <>
