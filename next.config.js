@@ -11,6 +11,12 @@ const nextConfig = {
                 port: '',
                 pathname: '/api/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'file.rendit.io',
+                port: '',
+                pathname: '/n/fOSe8IhnB4LMY7ixbxk3.png',
+            },
         ],
     },}
 

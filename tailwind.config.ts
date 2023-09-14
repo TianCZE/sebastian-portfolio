@@ -11,6 +11,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        myPurpleDark: '#4C3A51',
+        myPurpleMedium: '#774360',
+        myPurpleLight: '#B25068',
+        myOrangeMuted: '#E7AB79',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
